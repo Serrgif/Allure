@@ -4,7 +4,6 @@ on: [push, pull_request]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -31,7 +30,7 @@ jobs:
           else
             echo "Allure results directory does not exist"
           fi
-          
+
       - name: Generate Allure report
         run: ./gradlew allureReport
 
@@ -39,8 +38,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: allure-report
-          path: build/allure-results
+          path: build/allure-report  
 
       - name: List allure results
         run: ls -R build/allure-results
-
