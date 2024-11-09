@@ -38,8 +38,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: allure-report
-          path: build/reports/allure-report  # Updated path to the generated report
+          path: build/reports/allure-results  # Updated path to the generated report
 
       - name: List allure results
         run: ls -R build/allure-results
-  
